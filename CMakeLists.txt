@@ -17,14 +17,16 @@
 #
 #    $Id: CMakeLists.txt 723 2008-04-16 17:03:52Z volca $
 
-# TODO: My cmake build needs this: 
-
 cmake_minimum_required(VERSION 2.4)
 project (ReQuest)
 
 SET(REQUEST_VER_MAJOR "0")
 SET(REQUEST_VER_MINOR "0")
 SET(REQUEST_VER_PATCH "1")
+
+if(COMMAND cmake_policy)
+    cmake_policy(SET CMP0003 NEW)
+endif(COMMAND cmake_policy)
 
 # Warning level high (Lowered by one to supress the payload of ogre related warnings in VC)
 SET(CMAKE_CXX_WARNING_LEVEL 4)
