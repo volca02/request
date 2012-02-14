@@ -1,0 +1,7 @@
+MenuFont
+{
+	type 		truetype
+	source 		stopmotion.ttf
+	size   20
+}
+

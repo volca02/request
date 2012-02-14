@@ -1,0 +1,11 @@
+material mine/SOLID
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.000000 0.000000
+			specular 0.500000 0.500000 0.500000 12.500000
+		}
+	}
+}

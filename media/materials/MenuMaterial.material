@@ -1,0 +1,57 @@
+material MenuMaterial
+{
+  technique
+  {
+    pass
+    {
+		         lighting off
+                        ambient 1 1 1
+                        diffuse 1 1 1
+                        specular 1 1 1 30
+                        scene_blend alpha_blend
+                        texture_unit
+                        {
+				colour_op_ex source1 src_manual src_current 1 1 0.7
+                        }
+    }
+  }
+}
+
+material MouseCursor
+{
+    technique
+    {
+	pass
+	{
+    	    lighting off
+            ambient 1 1 1
+            diffuse 1 1 1
+            specular 1 1 1 30
+            scene_blend alpha_blend
+            texture_unit
+            {
+                    texture cursor.png
+            }
+    }
+  }
+}
+
+material Logo
+{
+    technique
+    {
+	pass
+	{
+    	    lighting off
+            ambient 1 1 1
+            diffuse 1 1 1
+            specular 1 1 1 30
+            scene_blend alpha_blend
+
+            texture_unit
+            {
+                    texture logo.png
+            }
+    }
+  }
+}

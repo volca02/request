@@ -1,0 +1,36 @@
+material Ship/SOLID
+{
+	technique
+	{
+		pass
+		{
+			shading gouraud
+			diffuse 0.333483 0.149727 0.716672
+			specular 0.500000 0.500000 0.500000 12.500000
+		}
+	}
+}
+material Ship1/SOLID
+{
+	technique
+	{
+		pass
+		{
+			shading gouraud
+			diffuse 1.000000 1.000000 1.000000
+			specular 0.500000 0.500000 0.500000 12.500000
+		}
+	}
+}
+material Ship2/SOLID
+{
+	technique
+	{
+		pass
+		{
+			shading gouraud
+			diffuse 0.831177 0.113443 0.113443
+			specular 0.500000 0.500000 0.500000 12.500000
+		}
+	}
+}
