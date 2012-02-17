@@ -77,13 +77,13 @@ public:
 protected:
     void release(void);
 
-    std::string mCaption;
-    std::string mMatName;
-    MenuCallback mCallback;
     MenuSheet *mOwner;
-    Ogre::OverlayContainer *mOverlay;
-    bool mAutoPosition;
+    std::string mCaption;
+    MenuCallback mCallback;
     bool mFocused;
+    Ogre::OverlayContainer *mOverlay;
+    std::string mMatName;
+    bool mAutoPosition;
 };
 
 class MenuSystem;

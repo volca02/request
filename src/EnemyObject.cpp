@@ -35,12 +35,12 @@ namespace ReQuest {
 EnemyObject::EnemyObject(ObjectSystem* owner, int id, const EnemyConstructionParams& ec)
     : RenderedGameObject(owner, id, ec.type, ec.meshName),
       mParams(ec),
-      mCurveAngle(0),
       mFireTimer(mParams.fireprob),
       mLayMinesTimer(mParams.fireprob),
       mFollowTimer(mParams.follow),
       mChangeDirTimer(mParams.changedir),
-      mChangeCurveTimer(mParams.changecurve)
+      mChangeCurveTimer(mParams.changecurve),
+      mCurveAngle(0)
 {
     setBounce(true);
 

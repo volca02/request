@@ -37,6 +37,7 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
     SET(CMAKE_CXX_FLAGS_DISTRIBUTION "-g -O3")
     SET(CMAKE_C_FLAGS_DISTRIBUTION "-g -O3")
     SET(CMAKE_CXX_FLAGS "-g")
+    ADD_DEFINITIONS(-Wall -fno-strict-aliasing -fvisibility=default)
 ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 
 # Various modules used for library path detections.

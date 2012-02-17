@@ -55,12 +55,12 @@ public:
     virtual void setPosition(const Ogre::Vector3& pos) { mPosition = pos; };
 
 protected:
+    EffectSystem *mOwner;
     Ogre::Vector3 mPosition;
-    int mType;
     int mID;
+    int mType;
     bool mFinished;
     GameObject *mFollowObject;
-    EffectSystem *mOwner;
 };
 
 /// Abstract parent for affect factories

@@ -102,19 +102,12 @@ protected:
     virtual Effect* fireEffect(int effectType, const Ogre::Vector3& pos) const;
 
     ObjectSystem *mOwner;
-
-    bool mDead, mDying;
-
-    bool mBounce, mDieOnBounds;
-
     int mID;
-
     const int mObjectType;
-
     Ogre::Vector3 mPosition;
-
     Ogre::Vector3 mVelocity;
-
+    bool mDead, mDying;
+    bool mDieOnBounds, mBounce;
     float mRadius;
 };
 
@@ -132,10 +125,8 @@ public:
 
 protected:
     RendererSystem *mRendererSys;
-
-    Ogre::Entity *mEntity;
-
     Ogre::SceneNode *mSceneNode;
+    Ogre::Entity *mEntity;
 };
 
 /// Factory abstract base. Used as a base for factories for different object types

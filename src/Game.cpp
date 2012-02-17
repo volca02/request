@@ -44,23 +44,26 @@ namespace ReQuest {
 // ----- Game Class -----------------------------------------------------------
 // ----------------------------------------------------------------------------
 Game::Game(void) :
-    mConfigStorage(0),
-    mRendererSys(0),
-    mInputSys(0),
-    mTerminationRequested(false),
-    mInitialized(false),
-    mLastFrameTime(0),
-    mStateChangeRequested(0),
-    mTargetState(0),
-    mCurrentState(0),
+    mOgreRoot(),
     mPlayState(0),
     mMenuState(0),
-    mEffectSys(0) {
+    mCurrentState(0),
+    mTargetState(0),
+    mStateChangeRequested(0),
+    mConfigStorage(0),
+    mInputSys(0),
+    mRendererSys(0),
+    mEffectSys(0),
+    mTerminationRequested(false),
+    mInitialized(false),
+    mLastFrameTime(0)
+{
 }
 
-
-
 Game::~Game(void) {
+    delete mMenuState;
+    delete mPlayState;
+
     delete mInputSys;
     delete mEffectSys;
     delete mRendererSys;
@@ -69,16 +72,13 @@ Game::~Game(void) {
         mConfigStorage->storeConfig();
 
     delete mConfigStorage;
-
-    delete mOgreRoot;
+    mConfigStorage = 0;
 }
 
 void Game::init(void) {
     // already initialized. Silently exit
     if (mInitialized)
         return;
-
-    mOgreRoot = new Ogre::Root();
 
     // first step: initialize the configuration
     mConfigStorage = new ConfigStorage();
@@ -128,7 +128,7 @@ void Game::run(void) {
         if (handleStateChange())
             break;
 
-        unsigned long frameStart = mOgreRoot->getTimer()->getMicroseconds();
+        unsigned long frameStart = mOgreRoot.getTimer()->getMicroseconds();
         unsigned long deltaTime = frameStart - mLastFrameTime;
         mLastFrameTime = frameStart;
 

@@ -57,8 +57,8 @@ PlayState::PlayState(Game *owner) :
     mTime(0),
     mMonsterEmitTime(5.0f),
     mStarfield(0),
-    mZoom(0) {
-
+    mZoom(0)
+{
     // we need the scene manager to work with objects
     mRendererSystem = mOwner->getRendererSystem();
 
@@ -118,24 +118,29 @@ bool PlayState::keyPressed(const OIS::KeyEvent &e) {
         mOwner->setState(mOwner->getState(GS_MENU));
     else if (e.key == OIS::KC_B) // test bounce powerup
         activatePowerUp(mPlayer->bulletBounce(), 5.0f);
+
+    return false;
 }
 
 bool PlayState::keyReleased(const OIS::KeyEvent &e) {
-
+    return false;
 }
 
 bool PlayState::mouseMoved(const OIS::MouseEvent &e) {
     mRelative += Vector3(e.state.X.rel, -e.state.Y.rel, 0);
     mZoom += e.state.Z.rel;
+    return false;
 }
 
 bool PlayState::mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id) {
     // shoot a bullet
     //    if (id && OIS::MB_Left)
     mPlayer->fire();
+    return false;
 }
 
 bool PlayState::mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id) {
+    return false;
 }
 
 void PlayState::update(float delta) {

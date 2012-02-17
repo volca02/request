@@ -33,7 +33,11 @@ using namespace Ogre;
 
 namespace ReQuest {
 
-ExplosionEffect::ExplosionEffect(EffectSystem* owner, int id, const Ogre::Vector3& pos) : Effect(owner, id, EFF_EXPLOSION, pos), mTime(0) {
+ExplosionEffect::ExplosionEffect(EffectSystem* owner,
+                                 int id,
+                                 const Ogre::Vector3& pos)
+    : Effect(owner, id, EFF_EXPLOSION, pos), mTime(0)
+{
     mPosition += Vector3(0,0,1);
 
     mLight = mOwner->getSceneManager()->createLight("EffectLight" + StringConverter::toString(id));

@@ -326,7 +326,7 @@ bool GameObject::placeRandomly(int tries) {
     return false;
 }
 
-void GameObject::onCollision(GameObject *b) {
+void GameObject::onCollision(GameObject *) {
     // nothing here!
 }
 

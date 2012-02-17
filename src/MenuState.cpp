@@ -85,24 +85,29 @@ MenuState::~MenuState(void) {
 bool MenuState::keyPressed(const OIS::KeyEvent &e) {
     if (e.key == OIS::KC_ESCAPE)
         mOwner->requestTermination();
+
+    return false;
 }
 
 bool MenuState::keyReleased(const OIS::KeyEvent &e) {
-
+    return false;
 }
 
 bool MenuState::mouseMoved(const OIS::MouseEvent &e) {
     mMenuSystem->injectMouseMoved(e.state.X.abs, e.state.Y.abs);
     mMouseX = e.state.X.abs;
     mMouseY = e.state.Y.abs;
+    return false;
 }
 
 bool MenuState::mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id) {
     mMenuSystem->injectMouseClick(e.state.X.abs, e.state.Y.abs);
+    return false;
 }
 
 bool MenuState::mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id) {
     // TODO: mMenuSystem->injectMouseReleased(e, id);
+    return false;
 }
 
 void MenuState::update(float delta) {

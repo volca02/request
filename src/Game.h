@@ -32,66 +32,67 @@
 namespace ReQuest {
 
 
-    /// The root class. Manages the whole application's main flow
-    class Game {
-	public:
-	    /// Constructor. Initializes all the subsystems
-	    Game(void);
-	    
-	    /// Destructor. Deletes all the subsystems
-	    ~Game(void);
-	    
-	    /// initializes the game object
-	    void init(void);
-	    
-	    /// Main loop invoker
-	    void run(void);
-	    
-	    /// getter for config storage
-	    inline ConfigStorage* getConfigStorage(void) { return mConfigStorage; };
-	    
-	    /// invokes a request for termination
-	    inline void requestTermination(void) { mTerminationRequested = true; };
-	    
-	    void setState(GameState* state);
-	    
-	    GameState *getState(GameStateType type);
-	    
-	    RendererSystem *getRendererSystem(void) { return mRendererSys; };
-	    EffectSystem *getEffectSystem(void) { return mEffectSys; };
-	    
-	protected:
-	    // --- state mgmt
-	    GameState *mPlayState;
-	    GameState *mMenuState;
-	    
-	    GameState *mCurrentState;
-	    GameState *mTargetState;
-	    bool mStateChangeRequested;
-	    
-	    /// handles the state change request. Returns true if there is no state left
-	    bool handleStateChange(void);
-	    
-	    // --- member vars
-	    Ogre::Root* mOgreRoot;
-	    
-	    ConfigStorage* mConfigStorage;
-	
-	    InputSystem *mInputSys;
-	    RendererSystem *mRendererSys;
-		EffectSystem *mEffectSys;
-	    // ObjectSystem* mObjectSys;
-	    // MenuSystem* mMenuSys;
-	    
-	    /// Will get true upon request termination
-	    bool mTerminationRequested;
-	    
-	    /// set to true upon succesful initialization
-	    bool mInitialized;
-	    
-	    /// Time of the last frame
-	    unsigned long mLastFrameTime;
-    };
+/// The root class. Manages the whole application's main flow
+class Game {
+public:
+    /// Constructor. Initializes all the subsystems
+    Game(void);
+
+    /// Destructor. Deletes all the subsystems
+    ~Game(void);
+
+    /// initializes the game object
+    void init(void);
+
+    /// Main loop invoker
+    void run(void);
+
+    /// getter for config storage
+    inline ConfigStorage* getConfigStorage(void) { return mConfigStorage; };
+
+    /// invokes a request for termination
+    inline void requestTermination(void) { mTerminationRequested = true; };
+
+    void setState(GameState* state);
+
+    GameState *getState(GameStateType type);
+
+    RendererSystem *getRendererSystem(void) { return mRendererSys; };
+    EffectSystem *getEffectSystem(void) { return mEffectSys; };
+
+protected:
+    // --- member vars
+    Ogre::Root mOgreRoot;
+
+    // --- state mgmt
+    GameState *mPlayState;
+    GameState *mMenuState;
+
+    GameState *mCurrentState;
+    GameState *mTargetState;
+    bool mStateChangeRequested;
+
+    /// handles the state change request. Returns true if there is no state left
+    bool handleStateChange(void);
+
+
+    ConfigStorage* mConfigStorage;
+
+    InputSystem *mInputSys;
+    RendererSystem *mRendererSys;
+    EffectSystem *mEffectSys;
+    // ObjectSystem* mObjectSys;
+    // MenuSystem* mMenuSys;
+
+    /// Will get true upon request termination
+    bool mTerminationRequested;
+
+    /// set to true upon succesful initialization
+    bool mInitialized;
+
+    /// Time of the last frame
+    unsigned long mLastFrameTime;
+};
 
 };
 
