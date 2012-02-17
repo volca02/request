@@ -126,19 +126,12 @@ protected:
     typedef std::vector<MenuItem*> MenuItems;
 
     MenuItems mMenuItems;
-
-    bool mBuilt;
-
-    std::string mName;
-
-    MenuSystem *mOwner;
-
-    Ogre::Overlay *mOverlay;
-
     std::string mFont;
-
+    std::string mName;
+    bool mBuilt;
+    MenuSystem *mOwner;
+    Ogre::Overlay *mOverlay;
     MenuItem *mFocus;
-
     int mFontSize;
 };
 

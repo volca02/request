@@ -32,7 +32,12 @@ namespace ReQuest {
 // ----------------------------------------------------------------------------
 // ----- Renderer System Class ------------------------------------------------
 // ----------------------------------------------------------------------------
-RendererSystem::RendererSystem(Game* owner) : SubSystem(owner), mRenderWindow(0), mSceneManager(0), mDefaultCamera(0) {
+RendererSystem::RendererSystem(Game* owner)
+    : SubSystem(owner),
+      mRenderWindow(0),
+      mSceneManager(0),
+      mDefaultCamera(0)
+{
     mRoot = Ogre::Root::getSingletonPtr();
 
     // Temporary restoration code. Use the config storage for this

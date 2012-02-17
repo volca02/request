@@ -95,7 +95,7 @@ protected:
     Ogre::SceneNode *mBoundsNode;
     Ogre::ManualObject *mLevelBounds;
 
-    int mZoom;
+    float mZoom;
 
     EffectSystem *mEffectSystem;
     EffectFactory *mExplosionFactory;

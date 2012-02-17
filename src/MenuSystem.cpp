@@ -110,10 +110,12 @@ void MenuItem::setMaterialName(const std::string& name) {
 MenuSheet::MenuSheet(MenuSystem *owner,
                      const std::string& name,
                      const std::string& fontName)
-    : mFont(fontName),
+    : mMenuItems(),
+      mFont(fontName),
       mName(name),
       mBuilt(false),
       mOwner(owner),
+      mOverlay(0),
       mFocus(0),
       mFontSize(16)
 {

@@ -35,8 +35,8 @@ InputSystem::InputSystem(Game* owner, RendererSystem* rs)
     : SubSystem(owner),
       mRendererSystem(rs),
       mInputManager(0),
-      mKeyboard(0),
       mMouse(0),
+      mKeyboard(0),
       mListener(0)
 {
     // We count with the fact that the renderer system is created

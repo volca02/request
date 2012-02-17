@@ -53,8 +53,8 @@ public:
 protected:
     Ogre::Root *mRoot;
     Ogre::RenderWindow *mRenderWindow;
-    Ogre::Camera *mDefaultCamera;
     Ogre::SceneManager *mSceneManager;
+    Ogre::Camera *mDefaultCamera;
 };
 
 }; // namespace ReQuest
